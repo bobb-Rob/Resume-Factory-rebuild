@@ -41,7 +41,6 @@ const Experience = (props) => {
     
      const notEmpty = () => experience.length > 0 ? true: false;
 
-
      const notSubmitted = () => {
          let getStatus = experience.some((exp) =>
          exp.submitted === false); 
@@ -52,9 +51,9 @@ const Experience = (props) => {
          }           
      }      
 
-     console.log(experience)
-     console.log(notEmpty())
-     console.log(notSubmitted())
+    //  console.log(experience)
+    //  console.log( notEmpty())
+    //  console.log(notSubmitted())
 
     return (
         <div id='section-div' >

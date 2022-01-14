@@ -56,10 +56,7 @@ const Education = (props) => {
              return false
          }           
      }        
-
-     console.log(alleducation)
-     console.log(notEmpty())
-     console.log('not Submitted is ' + notSubmitted())              
+               
 
 
     return (

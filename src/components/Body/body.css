@@ -100,9 +100,43 @@ input,textarea{
     border: 2px solid green;
 } */
 
+#preview-btn{
+    width: 100%;
+    background-color: var(--pink);
+}
+
+
 textarea{
     width: 100%;
 }
+
+.radio-button-div  input[type="radio"]{
+    display: none;
+}
+
+.radio-button-div label {
+    display: inline-block;
+    background-color: var(--pinkBlend);
+    padding: 4px 11px;
+    /* font-family: Arial; */
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 7px;
+  }      
+
+  .radio-button-div input[type="radio"]:checked+label{
+    background-color: var(--mainBlue);
+    color: var(--lightPinkBlend);
+  }
+
+  .radio-button-div{
+      margin-top: -20px;
+      margin-bottom: 15px;     
+  }
+
+  .radio-button-div p{  
+    margin-top: 0px;
+  }
 
 
 

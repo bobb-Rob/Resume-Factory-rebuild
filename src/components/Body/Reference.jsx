@@ -19,36 +19,39 @@ const Reference = ({ allData, addData, deleteData, editData, submitForm, onChang
             return false;
         }           
     }      
+
+
+    console.log(allData)
+    console.log('not empty is ' + notEmpty())
+    console.log('not Submitted is ' + notSubmitted())  
             
 
         return (
             <section className='educationSection' >
-            <form id='skillForm' onSubmit={(e) => submitForm(e)} >
-                <h2>{sectionHeading}</h2> 
+            <h2 className="section-header"  >{sectionHeading}</h2> 
 
-                <div>
-                    <p>Do you wish to supply your reference now</p>
-                    <label  htmlFor="yes">
-                        Yes
-                        {"    "}
-                        <input type='radio' name="provided" id="yes" value='yes' 
+            <form id='referenceForm' onSubmit={(e) => submitForm(e)} >              
+
+                <div className="radio-button-div"  >
+                    <p>Do you wish to supply your reference now</p>               
+                       
+                        <input type='radio' name="provided" id="yes-radio" value='yes' 
                         checked={provided === 'yes'} 
                         onChange={onRadioChange}
                         />
-                    </label>
-                    {"    "}
-                    <label htmlFor="no">
-                        No
-                        {"    "}
-                        <input type='radio' name="provided" id="no" value='no' 
+                    <label  className="radioLabel" htmlFor="yes-radio"> Yes </label>
+                    {"    "}                                         
+                       
+                        <input type='radio' name="provided" id="no-radio" value='no' 
                         checked={provided === 'no' }
                         onChange={onRadioChange}
                          />
-                    </label>                
+                         <label  className="radioLabel" htmlFor="no-radio">No</label>
+                                   
                 </div>            
             
             
-            { (provided === 'yes')  &&  <div>
+            {(provided === 'yes')  &&  <div>
 
                 {notSubmitted() && allData.map((reference) => {
                     return (
@@ -69,7 +72,7 @@ const Reference = ({ allData, addData, deleteData, editData, submitForm, onChang
                             value={reference.phoneNumber} onChange={(e) => onChange(e, reference.id)}  
                             /> 
                             
-                            <input type='email' id={reference.id} placeholder='Place of employment' 
+                            <input type='email' id={reference.id} placeholder='Email' 
                             className='reference' name='email'
                             value={reference.email} onChange={(e) => onChange(e, reference.id)}  
                             /> 
@@ -85,7 +88,7 @@ const Reference = ({ allData, addData, deleteData, editData, submitForm, onChang
                 <div className='experience_submit_edit_btn' >
                 {(notEmpty() && notSubmitted())  &&
                     <div>
-                        <button form='skillForm' type='submit' className='submit_btn btn'                        
+                        <button form='referenceForm' type='submit' className='submit_btn btn'                        
                         >Submit this Section</button>
 
                         <button type='button' className='edit_btn btn'

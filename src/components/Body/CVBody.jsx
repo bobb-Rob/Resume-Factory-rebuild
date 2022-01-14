@@ -3,6 +3,7 @@ import PersonalInfo from './personalInfo';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
+import Hobby from './Hobbies';
 import { Reference } from './Reference';
 import uniqid from "uniqid";
 import './body.css'
@@ -50,6 +51,17 @@ const CVBody = () => {
             submitted: false,
          },{
             skill: '',
+            id: uniqid(),
+            submitted: false,
+         },
+    ])
+
+    const [hobbies, setHobbies] = useState([
+        {   hobby: '',
+            id: uniqid(),
+            submitted: false,
+         },{
+            hobby: '',
             id: uniqid(),
             submitted: false,
          },
@@ -222,17 +234,87 @@ const [references, setReferences] = useState([{
         }))
     }
 
+
+    const addHobby = () => {
+        setHobbies([...hobbies,
+            {   hobby: '',
+                id: uniqid(),
+                submitted: false,             
+        },])
+    }
+
+
+    const onHobbiesChange = (e, id) => {
+        const {name, value } = e.target
+        const newHobbies = hobbies.map((hobby) => {
+        if(hobby.id === id){
+            return {...hobby, [name]: value }
+        }
+        return hobby
+    })
+    setHobbies([...newHobbies])
+    }
+
+    const deleteHobby =  (id) => {
+        const newHobbies = hobbies.filter((s) => s.id !== id);
+        setHobbies([...newHobbies]);    
+    }
+
+    const submitHobbyForm = (e) => {
+        e.preventDefault();
+        setHobbies(hobbies.map((hobby) => {
+            return {...hobby, submitted: true}
+        }))
+    }
+    const editHobbies = (e) => {       
+        setHobbies(hobbies.map((hobby) => {
+            return {...hobby, submitted: false}
+        }))
+    }
+
     const onReferenceChange = (e, id) => {
         const { name, value } = e.target;
         const newReferences = references.map((reference) => {
             if(reference.id === id){
                 return {...reference, [name]: value}
             }
+            return reference;
         })
+        console.log(references)
         return setReferences([...newReferences])
     }
 
+    const addReferences = () => {
+        setReferences([...references,{
+            refName: '',
+            employment: '',
+            phoneNumber: '', 
+            email: '',               
+            id: uniqid(),
+            submitted: false,
+         }])
+    }
+    
+    const handleRefDelete = (id) => {
+        const newRefs = references.filter((reference) => reference.id !== id)
+        setReferences([...newRefs])
+    }
    
+    const editRefs = () => {       
+        setReferences(references.map((ref) => {
+            return {...ref, submitted: false}
+        }))
+    }
+    
+    const submitRefs = (e) => {    
+        e.preventDefault()   
+        setReferences(references.map((ref) => {
+            return {...ref, submitted: true}
+        }))
+    }
+
+
+
     return (
         <div className='CV-container'  >
             <PersonalInfo data={personalInfo}
@@ -258,18 +340,20 @@ const [references, setReferences] = useState([{
             sectionHeading = 'Skills' placeHolder = 'Skill'
             />
 
-            <Skills allSkills = {skills} addSkill = {addSkill}
-            onChange = {onSkillsChange} deleteSkill = {deleteSkill}
-            submitSkillForm = {submitSkillForm} editSkill = {editSkill}
+            <Hobby allHobbies = {hobbies} addHobby = {addHobby}
+            onChange = {onHobbiesChange} deleteHobby = {deleteHobby}
+            submitHobbyForm = {submitHobbyForm} editHobbies = {editHobbies}
             sectionHeading = "Hobbies" placeHolder = 'Hobby'
             />
 
             <Reference
             sectionHeading = 'Reference(s)'
             allData = {references} onChange={onReferenceChange}
-            
+            addData = { addReferences } deleteData={handleRefDelete}
+            editData={editRefs} submitForm={submitRefs}
             />
 
+            <button id='preview-btn' className='btn'  >Preview Resume</button>
 
 
             
