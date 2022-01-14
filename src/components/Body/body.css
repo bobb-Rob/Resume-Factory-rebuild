@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Merriweather+Sans:ital,wght@0,300;0,400;0,800;1,300;1,400&display=swap');
+
+:root{
+    --mainBlue: rgb(2, 2, 39);
+    --pinkBlend: rgb(240, 146, 146);
+    --lightPinkBlend: rgb(243, 178, 178);
+    --line: rgb(141, 140, 140);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.CV-container{
+    font-family: 'Merriweather Sans';
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    margin: 40px;
+    border: 1px solid var(--line);
+    min-width: 80%;
+    padding: 40px;
+    
+    border-radius: 10px;
+    box-shadow: -1px 0px 7px -2px #1E1E1E;
+}
+
+.section-header{
+    /* border: 2px solid var(--line); */
+    color: var(--mainBlue);
+    text-shadow: -1px 0px 7px -2px #1E1E1E;
+}
+
+.section-header::after{
+    content: '*';
+    color: red;
+}
+
+
+#section-div{
+    border-bottom: 2px solid var(--pinkBlend);
+    /* border-radius: 4px; */
+    padding-bottom: 20px;
+}
+
+#section-div h2{
+    margin-top: 20px;
+}
+
+.add-btn{
+    margin-left: 10px;
+    min-width: 100px !important;
+}
+
+#delete-btn{
+    border: 2px solid var(--mainBlue);
+    background: var(--lightPinkBlend);
+    color: var(--mainBlue);
+    min-width: 70px;
+}
+
+#next-btn{       
+  display: none;
+}
+
+.btn{
+    height: 40px;
+    min-width: 150px;
+    border-radius: 10PX;
+    font-family: 'Merriweather Sans';
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: var(--pinkBlend);
+    background: var(--mainBlue);
+    margin-bottom: 10px;
+}
+
+.btn:hover{
+    box-shadow: 2px 1px 7px -2px #1E1E1E;
+}
+
+form{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input,textarea{
+    padding: 4px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 17px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--mainBlue);
+}
+
+/* .title_fname_lname{
+    border: 2px solid green;
+} */
+
+textarea{
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .CV-container{
+        background-color: var(--lightPinkBlend);
+        margin-top: 40px;    
+        margin: 20px;
+    }
+   
+
+    .headerContainer h2{
+        margin-top: 0px;
+       
+    }
+    
+    input,textarea{
+        padding: 4px;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 15px;
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 2px solid var(--mainBlue);
+        background: none;
+    }
+
+    #next-btn{    
+        display: inline;   
+        margin-left: 10px;
+        min-width: 70px;
+    }
+
+    
+}
+
+@media screen and (max-width: 650px) {
+    #next-btn{    
+        display: inline;   
+        margin-left: 10px;
+        min-width: 70px;
+    }
+
+}

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Merriweather+Sans:ital,wght@0,300;0,400;0,800;1,300;1,400&display=swap');
+
+:root{
+    --mainBlue: rgb(2, 2, 39);
+    --pinkBlend: rgb(240, 146, 146);;
+}
+
+body{
+    margin: 0px;
+}
+
+.headerContainer{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  height: 100px;
+  width: 100%;
+  background: var(--mainBlue);
+  color: var(--pinkBlend);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+}
+
+.iconWrapper{
+    border-radius: 50%;
+    background: var(--pinkBlend);
+    height: 50px;
+    width: 50px;
+    color: var(--mainBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -1px 11px 6px #020202;
+}
+
+.icon{
+    font-size: 30px;
+}
+
+.headerContainer h2{
+    margin-top: 0px; 
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .headerContainer{
+        padding-left: 40px;
+    }
+   
+
+    .headerContainer h2{
+        margin-top: 0px;      
+       
+    }
+    
+    
+}
