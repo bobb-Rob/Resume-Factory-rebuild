@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Resume-Factory-Rebuild/static/css/main.037cd9ce.css",
-    "main.js": "/Resume-Factory-Rebuild/static/js/main.0fd8053e.js",
-    "index.html": "/Resume-Factory-Rebuild/index.html",
-    "main.037cd9ce.css.map": "/Resume-Factory-Rebuild/static/css/main.037cd9ce.css.map",
-    "main.0fd8053e.js.map": "/Resume-Factory-Rebuild/static/js/main.0fd8053e.js.map"
+    "main.css": "/Resume-Factory-rebuild/static/css/main.037cd9ce.css",
+    "main.js": "/Resume-Factory-rebuild/static/js/main.0fd8053e.js",
+    "index.html": "/Resume-Factory-rebuild/index.html",
+    "main.037cd9ce.css.map": "/Resume-Factory-rebuild/static/css/main.037cd9ce.css.map",
+    "main.0fd8053e.js.map": "/Resume-Factory-rebuild/static/js/main.0fd8053e.js.map"
   },
   "entrypoints": [
     "static/css/main.037cd9ce.css",
