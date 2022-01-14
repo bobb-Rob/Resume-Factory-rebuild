@@ -77,7 +77,7 @@ const Reference = ({ allData, addData, deleteData, editData, submitForm, onChang
                             value={reference.email} onChange={(e) => onChange(e, reference.id)}  
                             /> 
 
-                            <button className='delete_btn btn' type='button'
+                            <button className='delete_btn btn' type='button' id='delete-btn'
                         onClick={() => deleteData(reference.id)}
                         >Delete</button>                            
                         </div>
@@ -91,7 +91,7 @@ const Reference = ({ allData, addData, deleteData, editData, submitForm, onChang
                         <button form='referenceForm' type='submit' className='submit_btn btn'                        
                         >Submit this Section</button>
 
-                        <button type='button' className='edit_btn btn'
+                        <button type='button' className='add-btn btn'
                          onClick={(e) => addData(e) }
                         >Add</button>                       
                     </div>
